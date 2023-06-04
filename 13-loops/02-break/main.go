@@ -19,16 +19,14 @@ func main() {
 	)
 
 	for {
-		if i > 5 {
+		if i > 6 {
 			break
 		}
-
 		sum += i
+		fmt.Println(i, "--->", sum)
+		i += 2 // will be 1,3,5 in sequence
 
-		fmt.Println(i, "-->", sum)
-
-		i++
 	}
-
 	fmt.Println(sum)
+
 }

@@ -20,6 +20,7 @@ func main() {
 
 	// 1- adding new methods to the type
 	fmt.Println(h.Hours(), "hours")
+	fmt.Println(h.Minutes(), "minutos")
 
 	// 2- make it a distinct type for type-safety
 	// you can't use the defined type
@@ -29,6 +30,8 @@ func main() {
 	var m int64 = 2
 	h *= time.Duration(m)
 	fmt.Println(h)
+	fmt.Printf("hours %v\n", h.Hours())
+	fmt.Printf("minutes %v\n", h.Minutes())
 
 	// type of `h` and its underlying type are different
 	fmt.Printf("Type of h: %T\n", h)

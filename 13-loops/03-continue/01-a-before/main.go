@@ -26,7 +26,9 @@ func main() {
 		if i%2 != 0 {
 			// this continue creates an endless loop
 			// since the code never increases the i
+			i++
 			continue
+
 		}
 
 		sum += i

@@ -10,6 +10,7 @@ package main
 
 import (
 	"fmt"
+	"strings"
 )
 
 // ---------------------------------------------------------
@@ -36,4 +37,9 @@ I should go and play.
 	`
 
 	fmt.Println(msg)
+	fmt.Println("----------------------------------------------------------------\n",
+		"trimmed spaces are comming\n",
+		"----------------------------------------------------------------", "\n")
+
+	fmt.Println(strings.TrimSpace(msg))
 }

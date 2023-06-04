@@ -10,8 +10,8 @@ package main
 
 import (
 	"fmt"
+	"reflect"
 	"strconv"
-	"time"
 )
 
 // incdec is a statement
@@ -36,4 +36,22 @@ func main() {
 
 	// counter = 5+counter--
 	// counter = ++counter + counter--
+	emre := 0
+
+	for i := 0; i < counter; i++ {
+		emre++
+		fmt.Println("The value of count emre is:", strconv.Quote(strconv.Itoa(emre)))
+		// 	time.Sleep(time.Second)
+	}
+
+	nokta := [3][2]int{{11, 12}, {21, 22}, {31, 32}}
+	fmt.Println(reflect.TypeOf(nokta))
+	fmt.Println("Dizinin tamamı", nokta)
+	fmt.Println("3x2 matris biçiminde:")
+	for satır := 0; satır < 3; satır++ {
+		for sütun := 0; sütun < 2; sütun++ {
+			fmt.Print(nokta[satır][sütun], " ")
+		}
+		fmt.Println()
+	}
 }

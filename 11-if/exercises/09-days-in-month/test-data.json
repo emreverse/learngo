@@ -1,0 +1,27 @@
+PUT my_index/_settings
+{
+  "index.lifecycle": {
+    "name": "dba-test",
+    "rollover_alias": "dba-test"
+  }
+}
+
+
+POST /dba-test/_bulk
+{"index":{"_id":"51"}}
+{"account_number":51,"balance":14097,"firstname":"Burton","lastname":"Meyers","age":31,"gender":"F","address":"334 River Street","employer":"Bezal","email":"burtonmeyers@bezal.com","city":"Jacksonburg","state":"MO"}
+{"index":{"_id":"56"}}
+{"account_number":56,"balance":14992,"firstname":"Josie","lastname":"Nelson","age":32,"gender":"M","address":"857 Tabor Court","employer":"Emtrac","email":"josienelson@emtrac.com","city":"Sunnyside","state":"UT"}
+{"index":{"_id":"63"}}
+{"account_number":63,"balance":6077,"firstname":"Hughes","lastname":"Owens","age":30,"gender":"F","address":"510 Sedgwick Street","employer":"Valpreal","email":"hughesowens@valpreal.com","city":"Guilford","state":"KS"}
+{"index":{"_id":"68"}}
+{"account_number":68,"balance":44214,"firstname":"Hall","lastname":"Key","age":25,"gender":"F","address":"927 Bay Parkway","employer":"Eventex","email":"hallkey@eventex.com","city":"Shawmut","state":"CA"}
+{"index":{"_id":"70"}}
+
+
+GET /dba-test/_search
+{
+  "query": {
+    "match_all": {}
+  }
+}

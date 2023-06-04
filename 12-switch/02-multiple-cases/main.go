@@ -11,21 +11,24 @@ package main
 import (
 	"fmt"
 	"os"
+	"strings"
 )
 
 func main() {
 	city := os.Args[1]
-
+	city = strings.ToLower(city)
 	switch city {
-	case "Paris":
+	case "paris":
 		fmt.Println("France")
 		// break // unnecessary in Go
 
 		// vip := true
 		// fmt.Println("VIP trip?", vip)
 
-	case "Tokyo":
+	case "tokyo":
 		fmt.Println("Japan")
+	default:
+		fmt.Println("Default")
 		// fmt.Println("VIP trip?", vip)
 	}
 

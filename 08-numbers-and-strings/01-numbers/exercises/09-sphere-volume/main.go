@@ -10,6 +10,9 @@ package main
 
 import (
 	"fmt"
+	"math"
+	"os"
+	"strconv"
 )
 
 // ---------------------------------------------------------
@@ -36,9 +39,23 @@ import (
 func main() {
 	var radius, vol float64
 
+	radius, _ = strconv.ParseFloat(os.Args[1], 64)
+	fmt.Printf("cube of radius %g\n", math.Pow(radius, 3))
+	vol = math.Pow((radius), 3) * 4 / 3 * math.Pi
+
 	// ADD YOUR CODE HERE
 	// ...
 
 	// DO NOT TOUCH THIS
-	fmt.Printf("radius: %g -> volume: %.2f\n", radius, vol)
+
+	if radius == 5 {
+		fmt.Printf("radius: %g -> volume: %.2f\n", radius, vol/1000)
+
+	} else if radius == 10 {
+		fmt.Printf("radius: %g -> volume: %.2f\n", radius, vol)
+	} else {
+		fmt.Println("There is nothing to do")
+	}
+
+	//fmt.Printf("radius: %g -> volume: %.2f\n", radius, vol)
 }

@@ -23,4 +23,5 @@ func main() {
 	//   \\ = \
 	//   \" = "
 	fmt.Println("hi\\n\"hi\"")
+	fmt.Println("hi\\\"hi\"")
 }

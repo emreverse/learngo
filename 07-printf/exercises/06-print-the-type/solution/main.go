@@ -8,8 +8,14 @@
 
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"reflect"
+)
 
 func main() {
+
+	strings := "emre"
 	fmt.Printf("Type of %d is %[1]T\n", 3)
+	fmt.Printf("Type of the string is %s\n:", reflect.TypeOf(strings))
 }

@@ -21,12 +21,12 @@ func main() {
 
 	area = area - 10 // decreases area by 10
 	area = area + 10 // increases area by 10
-	area = area * 2  // doubles the area
+	area = area * 3  // doubles the area
 	area = area / 2  // divides the area by 2
 	fmt.Printf("area=%g\n", area)
 
 	// // ASSIGNMENT OPERATIONS
-	area -= 10 // decreases area by 10
+	area -= 20 // decreases area by 10
 	area += 10 // increases area by 10
 	area *= 2  // doubles the area
 	area /= 2  // divides the area by 2
@@ -37,6 +37,9 @@ func main() {
 	// area %= 7
 
 	// this works
+	fmt.Println(float64(int(area)) / 8)
+	fmt.Println(float64(int(area)) / 6)
 	area = float64(int(area) % 7)
 	fmt.Printf("area=%g\n", area)
+
 }

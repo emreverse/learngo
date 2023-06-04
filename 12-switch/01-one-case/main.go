@@ -12,10 +12,17 @@ import "fmt"
 
 func main() {
 	city := "Paris"
-
+	emre := city
+	fmt.Println("şehir adı giriniz")
+	fmt.Scanf("%s", &city)
+	fmt.Println("sonuç ekrana yazdırılıyor")
 	switch city {
-	case "Paris":
+	case emre:
 		fmt.Println("France")
+	case city:
+		fmt.Printf("%s\n", city)
+		// default:
+		// 	fmt.Printf("%s", "default değer")
 	}
 
 	// SIMILAR TO IF

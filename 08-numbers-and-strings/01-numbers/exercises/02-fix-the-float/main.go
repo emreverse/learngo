@@ -8,7 +8,10 @@
 
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"reflect"
+)
 
 // ---------------------------------------------------------
 // EXERCISE: Fix the Float
@@ -20,6 +23,7 @@ import "fmt"
 // ---------------------------------------------------------
 
 func main() {
-	x := 5 / 2
+	x := 5.0 / 2
+	fmt.Println(reflect.TypeOf(x))
 	fmt.Println(x)
 }

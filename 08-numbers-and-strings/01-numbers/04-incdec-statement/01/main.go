@@ -16,7 +16,6 @@ func main() {
 	// ALTERNATIVES:
 	// n = n + 1
 	// n += 1
-
 	// BETTER:
 	n++
 

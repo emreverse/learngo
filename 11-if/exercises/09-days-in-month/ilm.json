@@ -1,0 +1,123 @@
+PUT /dba-test-000001
+{
+  "settings": {
+    "index": {
+      "number_of_shards": 5,  
+      "number_of_replicas": 0 
+    }
+  }
+}
+
+
+PUT /_index_template/dba-test
+{
+  "index_patterns": [
+    "dba-test-*"
+  ],
+    "template": {
+      "settings": {
+        "index": {
+          "lifecycle": {
+            "name": "dba-test",
+            "rollover_alias": "dba-test"
+      },
+      "routing": {
+        "allocation": {
+          "require": {
+            "data": "hot"
+          }
+        }
+      },
+      "mapping": {
+        "ignore_malformed": "true"
+      },
+      "number_of_shards": "5",
+      "number_of_replicas": "0"
+    }
+  }
+}
+}
+
+
+PUT dba-test-*/_settings
+{
+  "index.lifecycle": {
+    "name": "dba-test",
+    "rollover_alias": "dba-test"
+  }
+}
+
+PUT _ilm/policy/dba-test
+{
+    "policy": {
+      "phases": {
+        "hot": {
+          "min_age": "0ms",
+          "actions": {
+            "rollover": {
+              "max_age": "1d",
+              "max_size": "30gb"
+            },
+            "set_priority": {
+              "priority": 100
+            }
+          }
+        },
+        "warm": {
+          "actions": {
+            "allocate": {
+              "number_of_replicas": 0,
+              "include": {},
+              "exclude": {},
+              "require": {
+                "data": "${ES_WARM_PHASE_NODE_SELECTOR}"
+              }
+            },
+            "forcemerge": {
+              "max_num_segments": 1
+            },
+            "set_priority": {
+              "priority": 50
+            }
+          }
+        },
+        "cold": {
+          "min_age": "0d",
+          "actions": {
+            "allocate": {
+              "include": {},
+              "exclude": {},
+              "require": {
+                "data": "hot"
+              }
+            },
+            "set_priority": {
+              "priority": 0
+            }
+          }
+        },
+        "delete": {
+          "min_age": "7d",
+          "actions": {
+            "delete": {}
+          }
+        }
+      }
+    }
+  }
+
+
+POST /dba-test/_rollover/
+
+
+
+GET /dba-test/_search
+{
+  "query": {
+      "term": {
+        "firstname": {
+          "value": "hall"
+        }
+      }
+    }
+  }

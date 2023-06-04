@@ -38,6 +38,7 @@ func main() {
 	// Itoa = Integer to ASCII
 
 	fmt.Println(eq + strconv.Itoa(sum))
+	fmt.Printf("%s%d\n", eq, sum)
 
 	//
 
@@ -49,4 +50,5 @@ func main() {
 		strconv.FormatBool(false)
 
 	fmt.Println(eq)
+
 }

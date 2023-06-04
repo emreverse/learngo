@@ -41,7 +41,7 @@ func main() {
 
 	// Exported = First Letter is uppercase
 	fmt.Println("Hello Gopher!")
-
+    fmt.Printf("%s","emre")
 	// Go cannot call Println function by itself.
 	// That's why you need to call it here.
 	// It only calls `func main` automatically.

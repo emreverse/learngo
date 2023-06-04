@@ -8,6 +8,11 @@
 
 package main
 
+import (
+	"fmt"
+	"reflect"
+)
+
 // ---------------------------------------------------------
 // EXERCISE: Print the Type #3
 //
@@ -18,5 +23,8 @@ package main
 // ---------------------------------------------------------
 
 func main() {
-	// ?
+
+	fmt.Println("Type of hello is", reflect.TypeOf("hello"))
+	fmt.Printf("Type of hello is %T\n", "hello")
+	fmt.Printf("Type of hello is %[1]T\nAnd the type value of %d is: %[2]T\n", "hello", 2)
 }

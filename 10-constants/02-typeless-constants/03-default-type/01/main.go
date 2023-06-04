@@ -18,4 +18,5 @@ func main() {
 	// max := int32(5) + min
 
 	fmt.Printf("Type of max: %T\n", max)
+	fmt.Printf("Type of %v is %T\n", max, max)
 }

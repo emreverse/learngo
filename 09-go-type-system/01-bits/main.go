@@ -34,6 +34,8 @@ func main() {
 	fmt.Printf("%02b = %d\n", 2, 2)
 	fmt.Printf("%02b = %d\n", 3, 3)
 
+	fmt.Printf("%3b = %d\n", 4, 4)
+
 	// run this and analyze:
 	// how 1 moves from right to the left
 
@@ -88,5 +90,8 @@ func main() {
 	//                             22
 
 	i, _ = strconv.ParseInt("00010110", 2, 64)
+	fmt.Println(i)
+
+	i, _ = strconv.ParseInt("00010111", 2, 32)
 	fmt.Println(i)
 }

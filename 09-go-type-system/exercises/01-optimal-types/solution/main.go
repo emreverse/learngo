@@ -15,6 +15,9 @@ func main() {
 	var letter byte = 'A'
 	fmt.Println("an english letter:", letter)
 
+	var letterB byte = 'G'
+	fmt.Println("an english letter:", letterB)
+
 	// a non-english letter (search web for: unicode codepoint)
 	var unicode rune
 	unicode = 'Ç'

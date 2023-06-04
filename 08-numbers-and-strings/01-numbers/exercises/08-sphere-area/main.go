@@ -10,6 +10,9 @@ package main
 
 import (
 	"fmt"
+	"math"
+	"os"
+	"strconv"
 )
 
 // ---------------------------------------------------------
@@ -41,6 +44,10 @@ func main() {
 
 	// ADD YOUR CODE HERE
 	// ...
+	intsize, _ := strconv.ParseInt(os.Args[2], 10, 64)
+	radius, _ = strconv.ParseFloat(os.Args[1], int(intsize))
+	pi := math.Pi
+	area = 4 * pi * math.Pow(radius, 2)
 
 	// DO NOT TOUCH THIS
 	fmt.Printf("radius: %g -> area: %.2f\n", radius, area)

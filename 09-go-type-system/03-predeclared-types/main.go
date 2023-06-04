@@ -11,6 +11,7 @@ package main
 import (
 	"fmt"
 	"math"
+	"unicode/utf8"
 	"unsafe"
 )
 
@@ -56,4 +57,9 @@ func main() {
 
 	fmt.Println("hello  :", len("hello")+8, "bytes")
 	fmt.Println("hi     :", len("hi")+8, "bytes")
+
+	fmt.Println("emre	:", len("emreçç"), "bytes")
+	fmt.Println("emre	:", len("emre")+8, "bytes")
+	fmt.Println("emre	:", utf8.RuneCountInString("emreçç"), "bytes")
+	fmt.Printf("%s: %v and Type is %T\n", "float32", unsafe.Sizeof(float32(1)), float32(int(2)))
 }

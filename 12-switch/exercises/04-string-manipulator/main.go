@@ -8,6 +8,15 @@
 
 package main
 
+import (
+	"fmt"
+	"os"
+	"strings"
+
+	"golang.org/x/text/cases"
+	"golang.org/x/text/language"
+)
+
 // ---------------------------------------------------------
 // STORY
 //  You want to write a program that will manipulate a
@@ -45,4 +54,33 @@ package main
 
 func main() {
 
+	const (
+		usage = "[command] [string]"
+		l     = "lower"
+		u     = "upper"
+		t     = "title"
+	)
+
+	if len(os.Args) != 3 {
+		fmt.Println(usage)
+		return
+	}
+
+	// Create a TitleCase converter from the golang.org/x/text/cases package
+	titleCase := cases.Title(language.Turkish)
+
+	// Convert the input string to title case
+
+	c := os.Args[1]
+	switch c {
+	case l:
+		fmt.Printf("%s\n", strings.ToLower(os.Args[2]))
+	case u:
+		fmt.Printf("%s\n", strings.ToUpper(os.Args[2]))
+	case t:
+		fmt.Printf("%s\n", titleCase.String(os.Args[2]))
+		//fmt.Printf("%s\n", strings.Title(os.Args[2]))
+	default:
+		fmt.Printf("Unknow command %s\n", os.Args[1])
+	}
 }

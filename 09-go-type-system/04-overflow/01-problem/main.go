@@ -12,12 +12,21 @@ import "fmt"
 
 func main() {
 	var (
-		width  uint8 = 255
+		width  uint8 = 254
 		height       = 255 // int
 	)
-
+	fmt.Println("width:", width)
 	width++
-
+	fmt.Println("width:", width)
+	fmt.Println("int width:", int(width))
+	fmt.Println("uint8 height:", uint8(height))
+	if width < uint8(height) {
+		fmt.Println("height is greater")
+	} else if width >= uint8(height) {
+		fmt.Println("width is greater")
+	}
+	width++
+	fmt.Println("width:", width)
 	if int(width) < height {
 		fmt.Println("height is greater")
 	}

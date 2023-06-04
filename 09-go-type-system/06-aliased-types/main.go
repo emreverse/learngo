@@ -21,6 +21,10 @@ func main() {
 
 	uint8Val = byteVal // ok
 
+	// var m byte
+	// m = 2
+	// fmt.Println(m)
+
 	var (
 		// type rune = int32
 		runeVal  rune

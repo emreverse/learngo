@@ -69,5 +69,5 @@ func main() {
 	var pepper myGram = 20
 	pepper = myGram(salt)
 
-	fmt.Printf("Type of pepper      : %T\n", pepper)
+	fmt.Printf("Type of pepper      : %T and Pepper value is %d\n", pepper, pepper)
 }

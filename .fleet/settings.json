@@ -1,0 +1,10 @@
+{
+    "go.root": "/usr/local/Cellar/go/1.19.1/libexec/",
+    "go.path": "/Users/yunus.gormus/go/",
+    "go.modules": "true",
+    "go.roots": [
+        {
+            "path": "/usr/local/Cellar/go/1.19.1/libexec/pkg/tool/darwin_amd64/"
+        }
+    ]
+}

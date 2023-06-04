@@ -8,21 +8,25 @@
 
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"os"
+	"strings"
+)
 
 func main() {
-	i := 142
+	city := strings.ToLower(os.Args[1])
 
 	switch {
-	case i > 100:
-		fmt.Print("big ")
+	case city == "istanbul", city == "ardahan":
+		fmt.Printf("%s amazingly  ", city)
 		fallthrough
-	case i > 0:
-		fmt.Print("positive ")
+	case city != "istanbul", city != "ardahan":
+		fmt.Print("beautiful ")
 		fallthrough
 	default:
-		fmt.Print("number")
+		fmt.Println("bir şehir")
+
 	}
 
-	fmt.Println()
 }

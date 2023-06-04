@@ -43,4 +43,8 @@ func main() {
 	// floats goes to infinity when overflowed
 	f := float32(math.MaxFloat32)
 	fmt.Println("max float    :", f*1.2)
+
+	// emre is emre
+	var emre float64 = math.MaxFloat64
+	fmt.Println("max float64:", emre)
 }

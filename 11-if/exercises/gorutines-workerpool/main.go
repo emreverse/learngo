@@ -5,32 +5,33 @@ import (
 	"time"
 )
 
-func işçi(işçi_no int, iş_kuyruğu chan int, iş_cevapları chan int) {
-	for iş := range iş_kuyruğu {
-		fmt.Println(işçi_no, " .işçi", iş, ". işi yapıyor")
-		time.Sleep(time.Second * 1)
-		iş_cevapları <- iş
+func işçi(işçi int, kuyruk chan int, cevap chan int) {
+	for iş := range kuyruk {
+
+		fmt.Println(işçi, ".işçi", iş, ".işi tamamladı")
+		time.Sleep(time.Second)
+		cevap <- iş
+
 	}
 }
 
 func main() {
-
 	işçi_sayısı := 3
 	iş_sayısı := 9
-	iş_kuyruğu := make(chan int, iş_sayısı)
-	iş_cevapları := make(chan int, iş_sayısı)
+
+	kuyruk_m := make(chan int, iş_sayısı)
+	cevap_m := make(chan int, iş_sayısı)
 
 	for i := 1; i <= işçi_sayısı; i++ {
-		go işçi(i, iş_kuyruğu, iş_cevapları)
+		go işçi(i, kuyruk_m, cevap_m)
 	}
 
-	for iş := 1; iş <= iş_sayısı; iş++ {
-		iş_kuyruğu <- iş
-
+	for iş_m := 1; iş_m <= iş_sayısı; iş_m++ {
+		kuyruk_m <- iş_m
 	}
 
 	for a := 1; a <= iş_sayısı; a++ {
-		<-iş_cevapları
+		<-cevap_m
 	}
-	fmt.Println("----\nTüm işler tamamlandı.")
+	fmt.Println("---\nTamamlandı")
 }

@@ -8,6 +8,12 @@
 
 package main
 
+import (
+	"fmt"
+	"os"
+	"strings"
+)
+
 // ---------------------------------------------------------
 // EXERCISE: Vowel or Consonant
 //
@@ -21,7 +27,7 @@ package main
 // HINT
 //  + You can find the length of an argument using the len function.
 //
-//  + len(os.Args[1]) will give you the length of the 1st argument.
+//  + len(os.args) will give you the length of the 1st argument.
 //
 // BONUS
 //  Use strings.IndexAny function to detect the vowels.
@@ -50,4 +56,30 @@ package main
 // ---------------------------------------------------------
 
 func main() {
+
+	// args := os.Args
+	// ll := len(args)
+
+	// if ll != 2 || len(args[1]) != 1 {
+	// 	fmt.Println("Give me a letter")
+
+	// } else if args[1] == "a" || args[1] == "e" || args[1] == "i" || args[1] == "o" || args[1] == "u" {
+	// 	fmt.Printf("%q is a vowel.\n", args[1])
+	// } else if args[1] == "w" || args[1] == "y" {
+	// 	fmt.Printf("%q is sometimes a vowel, sometimes not.\n", args[1])
+	// } else {
+	// 	fmt.Printf("%q is a consonant.\n", args[1])
+	// }
+
+	args := os.Args
+	l := len(args)
+	if l != 2 || len(args[1]) != 1 {
+		fmt.Println("Give me a letter")
+	} else if strings.IndexAny(strings.ToLower(args[1]), "aeiou") != -1 {
+		fmt.Printf("%q is a vowel.\n", args[1])
+	} else if strings.ToLower(args[1]) == "w" || strings.ToLower(args[1]) == "y" {
+		fmt.Printf("%q is sometimes a vowel, sometimes not.\n", args[1])
+	} else {
+		fmt.Printf("%q is a consonant.\n", args[1])
+	}
 }

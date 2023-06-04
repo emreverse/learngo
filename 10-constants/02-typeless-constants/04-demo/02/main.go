@@ -28,8 +28,8 @@ func main() {
 
 	// OK: i is int, Duration is int64
 	//     So, i is convertable to int64
-	t = time.Second * time.Duration(i)
 
+	t = time.Second * time.Duration(i)
 	fmt.Println(t)
 
 	// #3
@@ -39,4 +39,5 @@ func main() {
 	t = time.Second * c
 
 	fmt.Println(t)
+	fmt.Printf("type is %T\n and month is %v\n and type of April is %T\n", time.Duration(time.April), time.Month(time.April), time.Month(time.April))
 }

@@ -11,12 +11,13 @@ package main
 import "fmt"
 
 func main() {
-	speed := 100 // #1
+	const speed = 100 // #1
 	// speed := 10 // #2
 
 	fast := speed >= 80
 	slow := speed < 20
 
+	fmt.Printf("speed's type is %T\n", speed)
 	fmt.Printf("fast's type is %T\n", fast)
 
 	fmt.Printf("going fast? %t\n", fast)

@@ -8,6 +8,11 @@
 
 package main
 
+import (
+	"fmt"
+	"reflect"
+)
+
 // ---------------------------------------------------------
 // EXERCISE: Print the Type
 //
@@ -18,5 +23,8 @@ package main
 // ---------------------------------------------------------
 
 func main() {
-	// ?
+	strings := "emre"
+	fmt.Printf("Type of %d is %[1]T\n", 3)
+	fmt.Printf("Type of the string is: %q\n", reflect.TypeOf(strings))
+	fmt.Printf("Type is %T\n", strings)
 }

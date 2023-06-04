@@ -15,7 +15,8 @@ func main() {
 
 	// assignment operation using string concat
 	name += " edward"
-
+	last += " "
+	last += "emre"
 	// equals to this:
 	// name = name + " edward"
 

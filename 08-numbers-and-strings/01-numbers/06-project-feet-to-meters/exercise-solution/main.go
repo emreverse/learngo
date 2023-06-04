@@ -15,11 +15,14 @@ import (
 )
 
 func main() {
+	arg2 := os.Args[2]
 	c, _ := strconv.ParseFloat(os.Args[1], 64)
+	d, _ := strconv.ParseFloat(arg2, 64)
 	f := c*1.8 + 32
 
 	// Like this:
 	fmt.Printf("%g ºC is %g ºF\n", c, f)
+	fmt.Printf("%g ºC is %g ºF\n", d, f)
 
 	// Or just like this (both are correct):
 	fmt.Printf("%g ºF\n", f)

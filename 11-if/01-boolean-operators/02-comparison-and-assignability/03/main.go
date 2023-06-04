@@ -34,10 +34,13 @@ func main() {
 	faster := speedB > 100 // ok: untyped
 
 	fmt.Println("is the other car going faster?", faster)
+	fmt.Printf("type of faster is %T\n", faster)
+	fmt.Printf("type of speedB is %T\n", speedB)
 
 	// ERROR: Type Mismatch
 	// faster = speedB > speed
 	faster = speedB > float64(speed)
+	fmt.Printf("type of speed is %T\n", float64(speed))
 	fmt.Println("is the other car going faster?", faster)
 
 	// #4

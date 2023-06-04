@@ -11,6 +11,7 @@ package main
 import (
 	"fmt"
 	"os"
+	"unicode/utf8"
 )
 
 // ---------------------------------------------------------
@@ -34,5 +35,7 @@ func main() {
 	// When you run it with "İNANÇ", it should return 5 not 7.
 
 	length := len(os.Args[1])
-	fmt.Println(length)
+	fmt.Println("Normal expected value:", length)
+	length = utf8.RuneCountInString(os.Args[1])
+	fmt.Println("Updated one:", length)
 }

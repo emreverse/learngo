@@ -11,16 +11,19 @@ package main
 import (
 	"fmt"
 	"os"
+	"strings"
 )
 
 func main() {
-	city := os.Args[1]
+	city := strings.ToLower(os.Args[1])
 
 	switch city {
-	case "Paris", "Lyon":
+	case "paris", "lyon":
 		fmt.Println("France")
-	case "Tokyo":
+	case "tokyo":
 		fmt.Println("Japan")
+	default:
+		fmt.Println("None of these cities")
 	}
 
 	// if city == "Paris" || city == "Lyon" {

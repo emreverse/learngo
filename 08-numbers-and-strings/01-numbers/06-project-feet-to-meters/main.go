@@ -22,7 +22,7 @@ func main() {
 
 	meters := feet * 0.3048
 
-	fmt.Printf("%f feet is %f meters.\n", feet, meters)
+	fmt.Printf("%.2f feet is %.2f meters.\n", feet, meters)
 
 	// pretty print it:
 

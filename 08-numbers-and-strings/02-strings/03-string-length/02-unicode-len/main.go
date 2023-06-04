@@ -32,8 +32,11 @@ func main() {
 	name := "İnanç"
 	fmt.Printf("%q is %d bytes\n", name, len(name))
 
+	emre := "emre"
+
 	// To get the actual characters (or runes) inside
 	// a utf-8 encoded string value, you should do this:
 	fmt.Printf("%q is %d characters\n",
 		name, utf8.RuneCountInString(name))
+	fmt.Printf("actual caracter length of \"emre\" is: %d\n", utf8.RuneCountInString(emre))
 }

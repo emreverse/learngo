@@ -24,4 +24,9 @@ func main() {
 	s = strings.ToUpper(s)
 
 	fmt.Println(s)
+	//c := strings.ToLower(s)
+	//fmt.Println(c)
+	c := msg + strings.Repeat("¿", len(s))
+	fmt.Println(len(s))
+	fmt.Println(strings.ToLower(c))
 }

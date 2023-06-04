@@ -35,6 +35,11 @@ import "fmt"
 func main() {
 	// DO NOT CHANGE THE CODE BELOW
 	var counter int
+	counter = counter + 1
+	counter = counter - 1
+	counter = counter + 5
+	counter = counter * 10
+	counter = counter / 5
 
 	// TYPE YOUR CODE HERE
 

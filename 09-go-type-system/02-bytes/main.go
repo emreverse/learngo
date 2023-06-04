@@ -23,4 +23,7 @@ func main() {
 	// this is the maximum number a byte can represent
 	b = 255
 	fmt.Printf("%08b = %d\n", b, b)
+
+	emre := 28
+	fmt.Printf("%08b = %d\n", emre, emre)
 }

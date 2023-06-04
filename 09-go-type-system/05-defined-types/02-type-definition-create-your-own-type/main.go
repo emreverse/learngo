@@ -15,10 +15,10 @@ import (
 // type definitions usually declared at the package level
 //
 // EXERCISE: Move the declaration into main()'s scope
-//
 type (
 	gram  float64 // float64 is the underlying type of gram
 	ounce float64 // float64 is the underlying type of ounce
+	kilo  float64 // float64 is the underlying type of
 )
 
 // above code is the same as the following:
@@ -31,6 +31,8 @@ func main() {
 	// underlying types are the same
 	var g gram = 1000 // gram  -> float64
 	var o ounce       // ounce -> float64
+
+	var k kilo = 102.5
 
 	// when the underlying types are the same
 	// then they can be converted between:
@@ -50,6 +52,9 @@ func main() {
 
 	// BUT: They're convertable to each other
 	o = ounce(g) * 0.035274
+
+	emre := kilo(k) * 1000
+	fmt.Printf("%g kilo is %0.1f gram\n", k, emre)
 
 	fmt.Printf("%g grams is %.2f ounce\n", g, o)
 }

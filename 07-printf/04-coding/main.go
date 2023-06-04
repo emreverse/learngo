@@ -26,8 +26,8 @@ func main() {
 
 	// argument indexing - indexes start from 1
 	fmt.Printf(
-		"%v is %v away. Think! %[2]v kms! %[1]v OMG.\n",
-		planet, distance,
+		"%v is %v away %v. Think! %[2]v kms! %[1]v OMG.\nAlso %[3]v\n\n",
+		planet, distance, orbital,
 	)
 
 	// why use other verbs than? because: type-safety
@@ -49,4 +49,5 @@ func main() {
 	fmt.Printf("Orbital Period: %.0f days\n", orbital)
 	fmt.Printf("Orbital Period: %.1f days\n", orbital)
 	fmt.Printf("Orbital Period: %.2f days\n", orbital)
+	fmt.Printf("Orbital Period: %.3f days\n", orbital)
 }

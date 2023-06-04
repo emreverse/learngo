@@ -8,6 +8,12 @@
 
 package main
 
+import (
+	"fmt"
+	"os"
+	"strconv"
+)
+
 // ---------------------------------------------------------
 // EXERCISE: Odd or Even
 //
@@ -37,4 +43,17 @@ package main
 // ---------------------------------------------------------
 
 func main() {
+	args, _ := strconv.ParseInt(os.Args[1], 10, 64)
+	switch {
+	case args >= 8 && args%8 == 0:
+		fmt.Printf("%d is an even number and it's divisible by 8\n", args)
+	case args < 8 && args%2 == 0:
+		fmt.Printf("%d is an even number\n", args)
+	case args > 8 && args%2 != 0:
+		fmt.Printf("%d is an odd number\n", args)
+	case args > 8 && args%2 == 0:
+		fmt.Printf("%d is an even number\n", args)
+	case args < 8 && args%2 != 0:
+		fmt.Printf("%d is an odd number\n", args)
+	}
 }

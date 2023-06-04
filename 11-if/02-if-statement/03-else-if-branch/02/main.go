@@ -11,13 +11,20 @@ package main
 import "fmt"
 
 func main() {
-	score := 2
+	// score := 2
+	fmt.Println("Enter score: ")
 
-	if score > 3 {
+	// var then variable name then variable type
+	var score float64
+
+	// Taking input from user
+	fmt.Scanln(&score)
+
+	if score > 3.0 {
 		fmt.Println("good")
 	} else if score == 3 {
 		fmt.Println("on the edge")
-	} else if score == 2 {
+	} else if score >= 2 && score <= 2.9 {
 		fmt.Println("meh...")
 	} else {
 		fmt.Println("low")
