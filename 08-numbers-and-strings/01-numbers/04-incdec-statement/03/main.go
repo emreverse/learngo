@@ -8,7 +8,11 @@
 
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"strconv"
+	"time"
+)
 
 // incdec is a statement
 
@@ -21,9 +25,13 @@ func main() {
 	counter++ // 2
 	counter++ // 3
 	counter-- // 2
+	counter-- //
+	counter++ // 4
+	counter++
 	fmt.Printf("There are %d line(s) in the file\n",
 		counter)
-
+	//q := strconv.Itoa(counter)
+	fmt.Println("There are", strconv.Quote(strconv.Itoa(counter)), "lines(s) in the file")
 	// the following "expressions" are incorrect:
 
 	// counter = 5+counter--
